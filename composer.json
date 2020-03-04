@@ -1,0 +1,6 @@
+{
+  "require": {
+    "james-heinrich/getid3": "*",
+    "ext-json": "*"
+  }
+}

@@ -1,0 +1,6 @@
+vendor/
+composer.phar
+composer.lock
+playlist/*
+.idea
+.git
