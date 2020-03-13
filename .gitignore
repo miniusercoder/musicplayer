@@ -1,6 +1,6 @@
 vendor/
 composer.phar
 composer.lock
-playlist/*
+playlist/
 .idea
 .git

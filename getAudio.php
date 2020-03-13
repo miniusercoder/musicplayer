@@ -6,7 +6,7 @@ if (isset($_GET['seed']))
 else
     $seed = time();
 $array = scandir(__DIR__ . "/playlist");
-$return = ["audio" => [], "offset" => 0];
+$return = ["audio" => [], "offset" => 0, "count" => 0];
 unset($array[0]);
 unset($array[1]);
 seededShuffle($array, $seed);
@@ -23,6 +23,7 @@ $return['audio'] = [
     "track" => $array[$offset],
     "tags" => $tags['tags']['id3v2']
 ];
+$return['count'] = count($array);
 $return['offset'] = $offset;
 echo json_encode($return);
 

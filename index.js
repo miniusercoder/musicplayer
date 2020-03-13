@@ -1,4 +1,5 @@
 let offset = 0;
+let count = 0;
 let seed = Math.floor(Math.random() * 100000);
 let audio_tag = document.getElementById("audio");
 let pause = document.getElementById("pause");
@@ -24,10 +25,11 @@ function getAudio() {
                 return 0;
             }
             response = JSON.parse(xhr.responseText);
+            count = response.count;
             let audio = response.audio;
             track_number.value = offset + 1;
             offset = response.offset;
-            audio_tag.src = "/playlist/" + audio.track;
+            audio_tag.src = "playlist/" + audio.track;
             document.title = audio.tags.artist[0] + " - " + audio.tags.title[0];
             document.getElementById("author").innerText = audio.tags.artist[0];
             document.getElementById("name").innerText = audio.tags.title[0];
@@ -83,7 +85,7 @@ seed_input.onchange = function () {
 track_number.onchange = function () {
     if (track_number.value <= 0)
         track_number.value = 1;
-    if (track_number.value > 195)
+    if (track_number.value > count)
         track_number.value = 1;
     offset = track_number.value - 1;
     getAudio();

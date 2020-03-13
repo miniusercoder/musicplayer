@@ -7,14 +7,14 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>LoFi music player</title>
-    <link href="/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div class="content">
     <audio id="audio" src=""></audio>
     <div class="information">
-        Playlist seed <input id="seed" type="text"><br>
-        Track no. <input id="track_number" type="text"><br>
+        <label for="seed">Playlist seed</label> <input id="seed" type="text"><br>
+        <label for="track_number">Track no.</label> <input id="track_number" type="text"><br>
         Author: <span id="author" style="color: #afafaf"></span> <br>
         Track title: <span id="name" style="color: #afafaf"></span> <br>
         Full name: <span id="fullname" style="color: #afafaf"></span> <br>
@@ -26,7 +26,7 @@
     <div class="button" id="previous">&laquo; Previous</div>
     <div class="button" id="next">Next &raquo;</div>
 </div>
-<script src="/index.js"></script>
+<script src="index.js"></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {

@@ -1,6 +1,7 @@
 {
   "require": {
     "james-heinrich/getid3": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "php": "^7.0"
   }
 }
