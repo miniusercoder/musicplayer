@@ -16,7 +16,6 @@ function getAudio() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             let response = xhr.responseText;
-            console.log(response);
             if (response === "error") {
                 offset = 0;
                 seed = Math.floor(Math.random() * 100000);
@@ -26,9 +25,10 @@ function getAudio() {
             }
             response = JSON.parse(xhr.responseText);
             count = response.count;
+            document.getElementById("count").innerText = count;
             let audio = response.audio;
-            track_number.value = offset + 1;
             offset = response.offset;
+            track_number.value = +offset + 1;
             audio_tag.src = "playlist/" + audio.track;
             document.title = audio.tags.artist[0] + " - " + audio.tags.title[0];
             document.getElementById("author").innerText = audio.tags.artist[0];
@@ -97,4 +97,15 @@ document.onkeydown = function (event) {
         else
             audio_tag.pause();
     }
+    if (event.code === "KeyA" || event.code === "ArrowLeft") {
+        if (offset - 1 >= 0) {
+            offset = +offset - 1;
+            getAudio();
+        }
+    }
+    if (event.code === "KeyD" || event.code === "ArrowRight") {
+        offset = +offset + 1;
+        getAudio();
+    }
+
 };
