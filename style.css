@@ -41,3 +41,36 @@ input {
     transform: translateY(-3px);
     outline: none;
 }
+
+.line {
+    width: 332px;
+    height: 2px;
+    background: #d7d7d7;
+}
+
+.point {
+    transform: translateY(-4px);
+    position: absolute;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    border: 1px solid #2c2d2e;
+    background: #aaaaaa;
+}
+
+.duration, .currentTime {
+    margin-top: 4px;
+    display: inline-block;
+    color: #c3c3c3;
+    font-size: 14px;
+}
+
+.duration {
+    float: right;
+    margin-right: 7px;
+}
+
+.controls {
+    margin-left: 10px;
+}
