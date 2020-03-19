@@ -12,6 +12,8 @@
 <body>
 <div class="content">
     <audio id="audio" src=""></audio>
+    <div class="volume" id="volume"></div>
+    <div class="pointVolume" id="pointVolume"></div>
     <div class="information">
         <label for="seed">Playlist seed</label> <input id="seed" type="text"><br>
         <label for="track_number">Track no.</label> <input id="track_number" type="text"> /<span id="count"></span><br>
@@ -22,9 +24,9 @@
     </div>
     <div class="controls">
         <div class="line" id="line"></div>
-        <div class="point" id="point"></div>
+        <div class="pointTime" id="pointTime"></div>
         <div class="currentTime" id="currentTime">0:00</div>
-        <div class="duration" id="duration">3:23</div>
+        <div class="duration" id="duration">0:00</div>
     </div>
     <div class="button" id="pause">Play</div>
     <div class="button" id="download">Download this track</div>
@@ -33,7 +35,7 @@
     <div class="button" id="next">Next &raquo;</div>
 </div>
 <div class="copyright">
-    <a href="https://vk.com/id280790787" style="text-decoration: none; color: #afafaf;">MiniUser &copy; 2020</a>
+    <a target="_blank" href="https://vk.com/id280790787">MiniUser</a> &copy; 2020
 </div>
 <script src="index.js"></script>
 <!-- Yandex.Metrika counter -->

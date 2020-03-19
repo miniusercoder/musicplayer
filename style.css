@@ -4,7 +4,7 @@ body {
 
 .content {
     font-family: 'Roboto', sans-serif;
-    width: 350px;
+    width: 370px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30vh;
@@ -19,7 +19,7 @@ body {
 .button {
     outline: none;
     display: inline-block;
-    width: 45%;
+    width: 40%;
     height: 25px;
     line-height: 25px;
     text-align: center;
@@ -44,16 +44,40 @@ input {
 }
 
 .line {
+    cursor: pointer;
     border-bottom: 2px solid;
     width: 332px;
     height: 3px;
     background: #d7d7d7;
 }
 
-.point {
+.pointTime {
     transform: translateY(-7px);
     position: absolute;
     display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    border: 1px solid #2c2d2e;
+    background: #aaaaaa;
+}
+
+.volume {
+    border-left: 2px solid #2c2d2e;
+    border-right: 2px solid #2c2d2e;
+    cursor: pointer;
+    height: 250px;
+    width: 2px;
+    display: inline-block;
+    float: right;
+    margin-left: 10px;
+    background: #d7d7d7;
+}
+
+.pointVolume {
+    transform: translateX(17px);
+    display: inline-block;
+    float: right;
     width: 6px;
     height: 6px;
     border-radius: 10px;
@@ -78,7 +102,13 @@ input {
 }
 
 .copyright {
+    color: #afafaf;
     position: absolute;
     bottom: 0;
     margin-bottom: 15px;
+}
+
+.copyright > a {
+    color: #afafaf;
+    text-decoration: none;
 }
