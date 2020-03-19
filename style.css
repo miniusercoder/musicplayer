@@ -76,3 +76,9 @@ input {
 .controls {
     margin-left: 10px;
 }
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+}
