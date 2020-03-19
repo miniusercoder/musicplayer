@@ -8,6 +8,7 @@ let seed_input = document.getElementById("seed");
 let track_number = document.getElementById("track_number");
 let point = document.getElementById("point");
 let current = document.getElementById("currentTime");
+let line = document.getElementById("line");
 let duration = document.getElementById("duration");
 seed_input.value = seed;
 track_number.value = offset;
@@ -114,10 +115,15 @@ document.onkeydown = function (event) {
     }
 };
 
+line.onclick = function (e) {
+    let percent = (+e.pageX - +line.getBoundingClientRect().x) * 100 / line.offsetWidth;
+    audio_tag.currentTime = (audio_tag.duration / 100 * percent);
+};
+
 setInterval(function () {
     current.innerText = Math.floor(audio_tag.currentTime / 60) +
         ":" + addZeroes((Math.floor(audio_tag.currentTime - ((Math.floor(audio_tag.currentTime / 60)) * 60))).toString(), 2);
-    point.style.transform = "translateY(-4px) translateX(" + 332 / 100 * (audio_tag.currentTime * 100 / audio_tag.duration) + "px)";
+    point.style.transform = "translateY(-7px) translateX(" + (line.offsetWidth - 4) / 100 * (audio_tag.currentTime * 100 / audio_tag.duration) + "px)";
 }, 100);
 
 function addZeroes(str, lenght) {

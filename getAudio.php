@@ -16,8 +16,8 @@ if (isset($_GET['offset'])) {
         die("error");
 } else
     $offset = 0;
-$getID3 = new getID3;
 
+$getID3 = new getID3;
 $tags = $getID3->analyze("playlist/{$array[$offset]}");
 $return['audio'] = [
     "track" => $array[$offset],
@@ -37,5 +37,4 @@ function seededShuffle(array &$array, int $seed)
         $array[$rand] = $array[$i];
         $array[$i] = $temp;
     }
-    return $array;
 }

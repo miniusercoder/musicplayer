@@ -40,20 +40,22 @@ input {
     color: #c3c3c3;
     transform: translateY(-3px);
     outline: none;
+    padding-bottom: 0;
 }
 
 .line {
+    border-bottom: 2px solid;
     width: 332px;
-    height: 2px;
+    height: 3px;
     background: #d7d7d7;
 }
 
 .point {
-    transform: translateY(-4px);
+    transform: translateY(-7px);
     position: absolute;
     display: inline-block;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 10px;
     border: 1px solid #2c2d2e;
     background: #aaaaaa;
