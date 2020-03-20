@@ -12,6 +12,12 @@ let line = document.getElementById("line");
 let duration = document.getElementById("duration");
 let volume = document.getElementById("volume");
 let pointVolume = document.getElementById("pointVolume");
+let share = document.getElementById("share");
+let link = new URL(location.href);
+if (link.searchParams.get('seed') !== null)
+    seed = link.searchParams.get('seed');
+if (link.searchParams.get('track') !== null)
+    offset = (+link.searchParams.get('track') - 1);
 seed_input.value = seed;
 track_number.value = offset;
 
@@ -129,6 +135,21 @@ line.onclick = function (e) {
 
 volume.onclick = function (e) {
     audio_tag.volume = parseFloat((volume.getBoundingClientRect().bottom - e.clientY - 1.7) / volume.offsetHeight);
+};
+
+share.onclick = function () {
+    let url = link.origin + link.pathname + "?seed=" + seed + "&track=" + (+offset + 1);
+    navigator.clipboard.writeText(url).then(() => {
+        share.innerText = 'Url link copied';
+        setTimeout(function () {
+            share.innerText = 'Share this track';
+        }, 1500);
+    }).catch(() => {
+        share.innerText = 'Failed to copy link';
+        setTimeout(function () {
+            share.innerText = 'Share this track';
+        }, 1500);
+    })
 };
 
 setInterval(function () {
