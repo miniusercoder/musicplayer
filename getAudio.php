@@ -25,7 +25,6 @@ $return['audio'] = [
 ];
 $return['count'] = count($array);
 $return['offset'] = $offset;
-header("Cache-Control", "max-age=44640");
 echo json_encode($return);
 
 function seededShuffle(array &$array, int $seed)
