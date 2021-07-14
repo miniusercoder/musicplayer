@@ -18,13 +18,14 @@ if (isset($_GET['offset'])) {
     $offset = 0;
 
 $getID3 = new getID3;
-$tags = $getID3->analyze("playlist/{$array[$offset]}");
+$tags = $getID3->analyze("playlist/$array[$offset]");
 $return['audio'] = [
     "track" => $array[$offset],
     "tags" => $tags['tags']['id3v2']
 ];
 $return['count'] = count($array);
 $return['offset'] = $offset;
+header("Cache-Control", "max-age=44640");
 echo json_encode($return);
 
 function seededShuffle(array &$array, int $seed)
