@@ -11,12 +11,11 @@ unset($array[0]);
 unset($array[1]);
 seededShuffle($array, $seed);
 if (isset($_GET['offset'])) {
-    $offset = $_GET['offset'];
+    $offset = (int)$_GET['offset'];
     if ($offset < 0 or $offset >= count($array))
         die("error");
 } else
     $offset = 0;
-
 $getID3 = new getID3;
 $tags = $getID3->analyze("playlist/$array[$offset]");
 $return['audio'] = [
@@ -25,7 +24,7 @@ $return['audio'] = [
 ];
 $return['count'] = count($array);
 $return['offset'] = $offset;
-echo json_encode($return);
+echo json_encode($return, JSON_INVALID_UTF8_SUBSTITUTE );
 
 function seededShuffle(array &$array, int $seed)
 {
